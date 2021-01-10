@@ -12,4 +12,24 @@ public class Scr_BasePlayer : MonoBehaviour
         return slimeNb;
     }
 
+    public void RemoveSlime(float number)
+    {
+        if (slimeNb >0)
+        {
+            slimeNb -= number;
+        }
+        else 
+        {
+            Dead();
+        }
+        
+
+    }
+
+    public void Dead()
+    {
+        Debug.Log("Dead");
+    }
+
+
 }

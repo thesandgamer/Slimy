@@ -9,8 +9,10 @@ public class Scr_JumpBox : MonoBehaviour
     public float groundedSkin = 0.05f;
     public LayerMask mask;
 
+    public Scr_PlaceSlime placeSlime;
+
     bool jumpRequest;
-    bool grounded;
+    public bool grounded;
 
     Vector2 playerSize;
     Vector2 boxSize;
@@ -44,6 +46,11 @@ public class Scr_JumpBox : MonoBehaviour
         {
             Vector2 boxCenter = (Vector2)transform.position + Vector2.down * (playerSize.y + boxSize.y) * 0.5f; 
             grounded = (Physics2D.OverlapBox(boxCenter, boxSize, 0f,mask) != null);
+        }
+
+        if (grounded)
+        {
+            placeSlime.PlaceSlime();
         }
 
     }
