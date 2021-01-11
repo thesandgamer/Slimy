@@ -7,7 +7,6 @@ public class Scr_Sortie : MonoBehaviour
     public bool inTrigger;
     GameObject player;
 
-
     void Update()
     {
         if (inTrigger)
@@ -18,6 +17,7 @@ public class Scr_Sortie : MonoBehaviour
             }
 
         }
+
     }
 
 
@@ -33,7 +33,7 @@ public class Scr_Sortie : MonoBehaviour
 
 
 
-    
+
 
 
 
