@@ -20,4 +20,5 @@ public class Scr_Player_Move : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false,false);
     }
+
 }

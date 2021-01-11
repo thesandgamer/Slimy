@@ -15,6 +15,12 @@ public class Scr_Jump : MonoBehaviour
 
     public bool auSol;
 
+    Vector2 playerSize;
+
+    void Awake()
+    {
+        playerSize = GetComponent<BoxCollider2D>().size;
+    }
 
     void Update()
     {
@@ -24,6 +30,13 @@ public class Scr_Jump : MonoBehaviour
         {
             jumpRequest = true;
         }
+
+        if (auSol)
+        {
+            placeSlime.PlaceSlime();
+        }
+
+
     }
 
     void FixedUpdate()

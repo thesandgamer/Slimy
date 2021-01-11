@@ -148,6 +148,5 @@ public class CharacterController2D : MonoBehaviour
 	public bool GetGrounded()
     {
 		return m_Grounded;
-
     }
 }
