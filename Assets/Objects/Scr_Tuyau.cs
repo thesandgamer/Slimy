@@ -1,25 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Scr_Sortie : MonoBehaviour
+public class Scr_Tuyau : MonoBehaviour
 {
     private bool inTrigger;
     GameObject player;
-
-    [Tooltip("Scene où aller")]
-    public string level;
+    public Scr_BasePlayer joueur ;
 
     void Update()
     {
         if (inTrigger)
         {
-            if (Input.GetButtonDown("Down"))
-            {
-                GoToLevel();
-            }
-
+            joueur.GainSlime(1);
         }
 
     }
@@ -34,13 +27,6 @@ public class Scr_Sortie : MonoBehaviour
     {
         inTrigger = false;
     }
-
-    public void GoToLevel()
-    {
-        SceneManager.LoadScene(level);
-    }
-
-
 
 
 

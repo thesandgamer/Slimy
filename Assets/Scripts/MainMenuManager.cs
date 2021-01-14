@@ -6,10 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    private AssetBundle myLoadedAssetBundle;
+    private string[] scenePaths;
+
+    /*
+    void Start()
+    {
+        myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/scenes");
+        scenePaths = myLoadedAssetBundle.GetAllScenePaths();
+    }
+    */
 
     public void GoToLevel(string scene)
     {
-        SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+        SceneManager.LoadScene(scene);
     }
 
 

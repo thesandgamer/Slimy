@@ -5,7 +5,15 @@ using UnityEngine;
 public class Scr_BasePlayer : MonoBehaviour
 {
     public float slimeNb = 20;
+    public float slimeMax;
 
+    float timer = 1;
+    float cooldown = 0;
+
+    void Start()
+    {
+        slimeMax = slimeNb;
+    }
 
     public float GetSlimeNb()
     {
@@ -14,6 +22,7 @@ public class Scr_BasePlayer : MonoBehaviour
 
     public void RemoveSlime(float number)
     {
+
         if (slimeNb >0)
         {
             slimeNb -= number;
@@ -22,7 +31,26 @@ public class Scr_BasePlayer : MonoBehaviour
         {
             Dead();
         }
-        
+
+
+    }
+
+    public void GainSlime(float number)
+    {
+
+
+        cooldown += Time.deltaTime;
+
+        if (cooldown >= timer)
+        {
+            if (slimeNb < slimeMax)
+            {
+                slimeNb += number;
+            }
+            cooldown -= timer;
+        }
+
+       
 
     }
 
