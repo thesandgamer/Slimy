@@ -17,7 +17,6 @@ public class Scr_Tuyau : MonoBehaviour
     float cooldown = 0;
     
 
-
     void Update()
     {
         if (inTrigger)

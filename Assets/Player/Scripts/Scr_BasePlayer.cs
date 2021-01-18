@@ -46,7 +46,7 @@ public class Scr_BasePlayer : MonoBehaviour
     public void Dead()
     {
         Debug.Log("Dead");
-       //SceneManager.LoadScene("S_MainMenu");
+        SceneManager.LoadScene("S_MainMenu");
     }
 
 
