@@ -13,7 +13,7 @@ public class Scr_Tuyau : MonoBehaviour
     [Tooltip("  Combien de Slime il donne")]
     public float slimeValue = 1;
     [Tooltip("  Tout les combiens il donne du Slime")]
-    public float gainSlimeTimer = 0.5;
+    public float gainSlimeTimer = 0.5f;
     float cooldown = 0;
     
 
