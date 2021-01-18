@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scr_BasePlayer : MonoBehaviour
 {
+    [Header("   Slime")]
     public float slimeNb = 20;
     public float slimeMax;
 
-    float timer = 1;
-    float cooldown = 0;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class Scr_BasePlayer : MonoBehaviour
         {
             slimeNb -= number;
         }
-        else 
+        else if (slimeNb <= 0)
         {
             Dead();
         }
@@ -37,26 +37,16 @@ public class Scr_BasePlayer : MonoBehaviour
 
     public void GainSlime(float number)
     {
-
-
-        cooldown += Time.deltaTime;
-
-        if (cooldown >= timer)
+        if (slimeNb < slimeMax)
         {
-            if (slimeNb < slimeMax)
-            {
-                slimeNb += number;
-            }
-            cooldown -= timer;
+            slimeNb += number;
         }
-
-       
-
     }
 
     public void Dead()
     {
         Debug.Log("Dead");
+       //SceneManager.LoadScene("S_MainMenu");
     }
 
 

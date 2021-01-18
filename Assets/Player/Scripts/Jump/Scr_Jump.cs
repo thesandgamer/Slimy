@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Scr_Jump : MonoBehaviour
 {
+    [Header("Jump")]
     [Range(1, 10)]
     public float jumpVelocity;
     public float groundedSkin = 0.05f;
 
+    [Header("Controllers")]
     public Scr_PlaceSlime placeSlime;
     public CharacterController2D controller;
 
+    [Header("Jump")]
     bool jumpRequest;
 
     public bool auSol;

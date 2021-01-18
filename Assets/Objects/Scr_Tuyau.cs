@@ -6,15 +6,30 @@ public class Scr_Tuyau : MonoBehaviour
 {
     private bool inTrigger;
     GameObject player;
+    [Header("   Controller")]
     public Scr_BasePlayer joueur ;
+
+    [Header("   GainSlime")]
+    [Tooltip("  Combien de Slime il donne")]
+    public float slimeValue = 1;
+    [Tooltip("  Tout les combiens il donne du Slime")]
+    public float gainSlimeTimer = 0.5;
+    float cooldown = 0;
+    
+
 
     void Update()
     {
         if (inTrigger)
         {
-            joueur.GainSlime(1);
-        }
+            cooldown += Time.deltaTime;
 
+            if (cooldown >= gainSlimeTimer)
+            {
+                joueur.GainSlime(slimeValue);
+                cooldown -= gainSlimeTimer;
+            }
+        }
     }
 
 

@@ -5,10 +5,12 @@ using UnityEngine.Tilemaps;
 
 public class Scr_PlaceSlime : MonoBehaviour
 {
+    [Header("   Tiles/TileMaps")]
     public Tile slimeTile;
     public Tilemap slimeTileMap;
     public Tilemap groundTileMap;
 
+    [Header("   Controller")]
     public Scr_BasePlayer player;
 
     public CharacterController2D controller;

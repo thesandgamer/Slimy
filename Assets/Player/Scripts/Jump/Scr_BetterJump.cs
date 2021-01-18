@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scr_BetterJump : MonoBehaviour
 {
+    [Header("   Jump")]
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     Rigidbody2D rb;
